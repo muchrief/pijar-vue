@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Mandiri 2</title>
+    <style>
+        .great p{
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="todo-wrapper">
+                <ol class="todo-list">
+                    <li class="todo" v-for="todo, index in todoList" :key="index">{{todo}}</li>
+                </ol>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" v-model="inputVal">
+                <button type="button" @click="addTodoList">Tambahkan</button>
+            </div>
+            <div class="great" v-if="isEqualOrMoreThanFour">
+                <p>hebat!</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                inputVal: "",
+                todoList: [],
+            },
+            methods: {
+                addTodoList(){
+                    console.log("tambahkan")
+                    if (!this.inputVal) {
+                        return
+                    }
+                    this.todoList.push(this.inputVal)
+                    this.inputVal = ""
+                }
+            },
+            computed: {
+                isEqualOrMoreThanFour(){
+                    return this.todoList.length >= 4
+                }
+            }
+        })
+    </script>
+</body>
+</html>
