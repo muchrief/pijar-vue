@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.w-full{
+    width: 100%;
+}
+
+.pd-x-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.pd-y-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.pd-4 {
+    padding: 1rem;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+
+.text-start {
+    text-align: start;
+}
+
